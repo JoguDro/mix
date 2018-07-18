@@ -41,7 +41,7 @@ public class ReadWrite {
 			Reader citac = new FileReader("src\\hr\\algebra\\java\\zadaca.txt");
 			int rijec;
 			while((rijec = citac.read()) != -1) {
-			System.out.println((char)rijec);
+			System.out.print((char)rijec);
 			}
 			citac.close();
 			
