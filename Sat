@@ -27,6 +27,9 @@ public class Sat {
 		      
 		    } if (min >= 60){
 		      sat = min / 60;
+		      
+		    }if (sek>=60) {ok
+		    	sek=sek - sek;
 		    }
 		    
 		    System.out.println(sat + " h " + min + " m " + sek + "s ");
