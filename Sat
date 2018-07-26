@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Sat {
 
+	
+
 	  public static void main(String args[]){
 		  
 		  	int sek = 0;
@@ -28,10 +30,13 @@ public class Sat {
 		    } if (min >= 60){
 		      sat = min / 60;
 		      
-		    }if (sek>=60) {ok
-		    	sek=sek - sek;
+		    }if (sek >= 60) {
+		    	//sek = sek % 60; //isto funkcionalno
+		    	
+		    	sek = sek - (min * 60);
+		    	//sek = sat - (sat * 60 * 60);   // ?
 		    }
 		    
-		    System.out.println(sat + " h " + min + " m " + sek + "s ");
+		    System.out.println(sat + " h " + min + " m " + sek + " s ");
 		  }
 		}
