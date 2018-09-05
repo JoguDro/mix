@@ -1,0 +1,91 @@
+package hr.algebra.hr;
+
+/*3. Napraviti klasu Polaznik koja ima String ime, String prezime, String Adresa, Int
+brojIneksa, int godinaRodenja. Upisati 5 polaznika, zatim ispisati na ekranu polaznike
+poredane po godini rođenja.
+->Upotrebom sučelja comperable usporediti godine rođenja polaznika.*/
+
+
+public class Polaznik implements Comparable<Polaznik> {
+	
+	@Override
+	public String toString() {
+		String ispis = "Ime: " + this.ime + ", Prezime: " + this.prezime + ", Adresa: " + this.adresa + ", Broj Indeksa: " + this.brojInd + ", Godina Rodenja: " + this.godRod;
+		return ispis;
+	     }
+	
+	String ime;
+	String prezime;
+	String adresa;
+	
+	int brojInd;
+	int godRod;
+	
+	Polaznik(String ime, String prezime, String adresa, int brojInd, int godRod) {
+		this.ime = ime;
+		this.prezime = prezime;
+		this.adresa = adresa;
+		this.brojInd = brojInd;
+		this.godRod = godRod;
+	}
+
+	@Override
+	public int compareTo(Polaznik drugaGod) {
+		if (this.godRod < drugaGod.godRod) {
+			return -1;
+		} else if (this.godRod == drugaGod.godRod) {
+			return 0;
+		} else {
+			return 1;
+		}
+	
+	}	
+	
+}
+
+*******************************************************************************
+
+package hr.algebra.hr;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class TestPol {
+
+	public static void main(String[] args) {
+		ArrayList<Polaznik> infoPol = new ArrayList<Polaznik>();		
+		
+		Polaznik p1 = new Polaznik("Miro", "Mirojevic", "berina 4", 123, 1987);
+		Polaznik p2 = new Polaznik("Dere", "Huljic", "balkansa 3", 143, 1986);
+		Polaznik p3 = new Polaznik("Pero", "Dindojevic", "sutjeska 6", 723, 1989);
+		Polaznik p4 = new Polaznik("Mateo", "Husar", "ilovacka 7", 129, 1984);
+		Polaznik p5 = new Polaznik("Vedrana", "Ilojevic", "puajnke 9", 143, 1983);
+		
+		infoPol.add(p1);
+		infoPol.add(p2);
+		infoPol.add(p3);
+		infoPol.add(p4);
+		infoPol.add(p5);
+		
+		
+		Collections.sort(infoPol);
+		System.out.println("ispis: ");
+		ispis(infoPol);
+		
+	
+		
+		
+
+	}
+
+	public static void ispis(ArrayList<Polaznik>infoPol) {
+	for (Object polaznik : infoPol) {
+		System.out.println(polaznik);
+	}
+		
+
+	}
+
+}
+
+
